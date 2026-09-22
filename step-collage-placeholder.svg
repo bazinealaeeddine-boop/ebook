@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="400" height="600" fill="#E8DCC8"/>
+  <rect x="400" width="400" height="600" fill="#D4A76A"/>
+  <circle cx="400" cy="300" r="50" fill="#5A6B4A"/>
+  <text x="400" y="315" text-anchor="middle" font-family="Arial" font-size="28" fill="white" font-weight="bold">1 | 2</text>
+  <text x="200" y="580" text-anchor="middle" font-family="Arial" font-size="18" fill="#666">Step 1</text>
+  <text x="600" y="580" text-anchor="middle" font-family="Arial" font-size="18" fill="#666">Step 2</text>
+</svg>

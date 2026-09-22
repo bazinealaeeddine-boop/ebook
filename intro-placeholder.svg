@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#F0EBE0"/>
+  <rect x="50" y="50" width="150" height="150" rx="10" fill="#D4A76A"/>
+  <rect x="220" y="50" width="150" height="150" rx="10" fill="#E8DCC8"/>
+  <rect x="390" y="50" width="150" height="150" rx="10" fill="#D4A76A"/>
+  <rect x="560" y="50" width="150" height="150" rx="10" fill="#E8DCC8"/>
+  <text x="400" y="400" text-anchor="middle" font-family="Arial" font-size="24" fill="#666">Ingredients Flat Lay</text>
+</svg>

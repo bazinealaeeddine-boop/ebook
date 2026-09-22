@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{cover_title}}</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-shadow"></div>
+  <div class="cover-branch cover-branch-top"></div>
+  <div class="cover-branch cover-branch-left"></div>
+  <div class="cover-dots"></div>
+
+  <div class="cover-top">
+    <div class="cover-chef-wrap">
+      <img
+        src="{{asset "chef.jpg"}}"
+        class="cover-logo"
+        alt="Chef"
+      >
+    </div>
+
+    <div class="social-icons" aria-label="Social links">
+      <a href="#" class="social-icon instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1"></circle>
+        </svg>
+      </a>
+
+      <a href="#" class="social-icon facebook" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.67.33-1 1-1z"></path>
+        </svg>
+      </a>
+
+      <a href="#" class="social-icon pinterest" aria-label="Pinterest">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 0 0-3.64 19.31c-.09-1.64-.02-3.61.41-5.18l1.35-5.7s-.34-.68-.34-1.68c0-1.57.91-2.75 2.05-2.75.97 0 1.44.73 1.44 1.6 0 .98-.62 2.45-.94 3.81-.27 1.14.57 2.06 1.69 2.06 2.03 0 3.59-2.14 3.59-5.23 0-2.73-1.96-4.64-4.76-4.64-3.24 0-5.14 2.43-5.14 4.95 0 1.01.39 2.1.87 2.69.1.12.11.23.08.36l-.32 1.3c-.05.21-.17.26-.39.16-1.45-.68-2.35-2.8-2.35-4.51 0-3.68 2.67-7.07 7.7-7.07 4.04 0 7.18 2.88 7.18 6.72 0 4.01-2.53 7.24-6.04 7.24-1.18 0-2.29-.61-2.67-1.34l-.73 2.78c-.26 1.02-.97 2.29-1.45 3.07A10 10 0 1 0 12 2z"></path>
+        </svg>
+      </a>
+
+      <a href="#" class="social-icon youtube" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23 12s0-3.8-.48-5.62a2.87 2.87 0 0 0-2.02-2.02C18.68 3.88 12 3.88 12 3.88s-6.68 0-8.5.48A2.87 2.87 0 0 0 1.48 6.38C1 8.2 1 12 1 12s0 3.8.48 5.62a2.87 2.87 0 0 0 2.02 2.02c1.82.48 8.5.48 8.5.48s6.68 0 8.5-.48a2.87 2.87 0 0 0 2.02-2.02C23 15.8 23 12 23 12z"></path>
+          <path class="icon-cutout" d="m10 15.5 5-3.5-5-3.5v7z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="cover-globe" aria-label="Website">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3z"></path>
+    </svg>
+  </div>
+
+  <div class="cover-arrow" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <path d="M18 18c23 14 34 31 36 57"></path>
+      <path d="m39 67 15 12 9-17"></path>
+    </svg>
+  </div>
+
+  <div class="cover-hand" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <path d="M35 87V47c0-5 7-5 7 0v19"></path>
+      <path d="M42 61V25c0-6 8-6 8 0v34"></path>
+      <path d="M50 59V18c0-6 8-6 8 0v41"></path>
+      <path d="M58 60V27c0-6 8-6 8 0v40"></path>
+      <path d="M66 66V43c0-6 8-6 8 0v31c0 15-8 22-22 22H45c-7 0-10-4-10-9z"></path>
+    </svg>
+  </div>
+
+  <p class="cover-subtitle">{{cover_subtitle}}</p>
+  <h1 class="cover-title">{{cover_title}}</h1>
+  <p class="cover-script">Recipe</p>
+
+  <div class="cover-image-wrap">
+    <img
+      src="{{asset "cover.jpg"}}"
+      class="cover-image"
+      alt="{{cover_title}}"
+    >
+  </div>
+
+  <div class="brand-pill">{{brand_name}}</div>
+  <p class="cover-website">{{brand_website}}</p>
+  <p class="cover-social">{{brand_social}}</p>
+  <div class="cover-footer">{{brand_website}}</div>
+</section>
+
+{{#each pages}}
+  {{#if (eq type "introduction")}}
+  <section class="page internal">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Introduction</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <p class="intro-text">{{../intro.personal_note}}</p>
+        <p class="intro-text">{{../intro.invitation}}</p>
+        <img
+          src="{{asset "intro.jpg"}}"
+          class="intro-image"
+          alt="Pound cake ingredients"
+        >
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "ingredients-explained")}}
+  <section class="page internal">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Ingredients Explained</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <ul class="ingredients-explained">
+          {{#each ../ingredients_explained}}
+          <li>
+            <span class="ingredient-name">{{boldMeasure item}}</span>
+            <span class="ingredient-role">{{role}}</span>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "ingredients")}}
+  <section class="page internal">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Ingredients and Variations</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <h2 class="section-title">Complete Ingredient List</h2>
+
+        <ul class="ingredients-simple">
+          {{#each ../complete_ingredients}}
+          <li>{{boldMeasure this}}</li>
+          {{/each}}
+        </ul>
+
+        <h2 class="section-title variations-title">Variations</h2>
+
+        <ul class="variations-list">
+          {{#each ../variations}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "tips")}}
+  <section class="page internal">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Pro Tips for Success</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <div class="tips-decor" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path d="M18 82c20-28 37-46 64-64-8 27-29 49-64 64z"></path>
+            <path d="M19 81c20-8 37-25 47-43"></path>
+          </svg>
+        </div>
+
+        <ol class="tips-list">
+          {{#each ../tips}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ol>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "step")}}
+  <section class="page internal step-page">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">How to Make This Recipe</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <article class="step-block">
+          <h2 class="step-title">
+            Step {{step.step_number}}: {{step.title}}
+          </h2>
+
+          <p class="step-desc">{{step.description}}</p>
+
+          <div class="step-images-frame">
+            <div class="step-images-grid">
+              <div class="step-image-box">
+                {{#if step.hasImage}}
+                  <img
+                    src="{{step.image}}"
+                    alt="{{step.alt}}"
+                  >
+                {{else}}
+                  <div class="step-image-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#5A6B4A" stroke-width="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                    <span>Step {{step.step_number}} image</span>
+                  </div>
+                {{/if}}
+                <span class="step-number-circle">{{step.step_number}}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "serving")}}
+  <section class="page internal">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Serving, Storage and FAQ</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content">
+        <h2 class="section-title">Serving Suggestions</h2>
+        <p class="body-text">{{../serving_suggestions}}</p>
+
+        <h2 class="section-title">Storage and Make-Ahead Tips</h2>
+        <p class="body-text">{{../storage_tips}}</p>
+
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        {{#each ../faq}}
+        <article class="faq-item">
+          <h3 class="faq-q">{{question}}</h3>
+          <p class="faq-a">{{answer}}</p>
+        </article>
+        {{/each}}
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+
+  {{#if (eq type "summary")}}
+  <section class="page internal summary-page">
+    <header class="page-header">
+      <svg class="page-header-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+      </svg>
+      <h1 class="page-header-title">Tasty Recipe Card</h1>
+    </header>
+
+    <main class="page-border">
+      <div class="page-content summary-content">
+        <div class="summary-grid">
+          <section class="summary-col">
+            <h2 class="summary-heading">Ingredients</h2>
+
+            <h3 class="summary-subheading">Equipment</h3>
+            <ul class="summary-list">
+              {{#each ../summary_card.equipment}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+
+            <h3 class="summary-subheading">Ingredients</h3>
+            <ul class="summary-list">
+              {{#each ../summary_card.ingredients}}
+              <li>{{boldMeasure this}}</li>
+              {{/each}}
+            </ul>
+          </section>
+
+          <div class="summary-divider"></div>
+
+          <section class="summary-col">
+            <h2 class="summary-heading">Instructions</h2>
+
+            <ol class="summary-list numbered">
+              {{#each ../summary_card.instructions}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ol>
+          </section>
+        </div>
+
+        <section class="summary-note-section">
+          <h2 class="summary-note-title">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 21h6M10 18h4M8 14a7 7 0 1 1 8 0v2H8v-2z"></path>
+            </svg>
+            Notes
+          </h2>
+
+          <ul class="summary-note-list">
+            {{#each ../summary_card.notes}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <img src="{{asset "chef.jpg"}}" class="page-footer-logo" alt="Chef">
+      <span class="page-footer-website">{{../brand_website}}</span>
+      <span class="page-footer-num">Page {{pageNumber}} of {{totalPages}}</span>
+    </footer>
+  </section>
+  {{/if}}
+{{/each}}
+
+</body>
+</html>
