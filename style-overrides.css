@@ -1,0 +1,243 @@
+/* Final visual pass: match the manually designed cover and stabilize PDF rendering. */
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("DancingScript-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Keep the cover clean, balanced, and close to the reference design. */
+.cover {
+  isolation: isolate;
+  background: #f8faf9;
+}
+
+.cover-shadow {
+  z-index: 0;
+  width: 70mm;
+  height: 70mm;
+  opacity: 0.28;
+}
+
+.cover-branch {
+  z-index: 1;
+  width: 13mm;
+  height: 13mm;
+  opacity: 0.7;
+  background: transparent;
+  border: 0;
+}
+
+.cover-branch::before,
+.cover-branch::after {
+  width: 11mm;
+  height: 5mm;
+  border-radius: 100% 0 100% 0;
+  background: #7b8f5a;
+  box-shadow: none;
+}
+
+.cover-branch::before {
+  top: 7mm;
+  left: -3mm;
+  transform: rotate(-28deg);
+}
+
+.cover-branch::after {
+  top: 0;
+  left: 5mm;
+  transform: rotate(28deg);
+}
+
+.cover-branch-top {
+  top: 17mm;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.cover-branch-left {
+  top: 75mm;
+  left: -10mm;
+  opacity: 0.3;
+  transform: rotate(-35deg);
+}
+
+.cover-dots {
+  z-index: 2;
+  right: 11mm;
+  bottom: 39mm;
+  width: 23mm;
+  height: 19mm;
+  opacity: 0.27;
+  background-image: radial-gradient(#7b8f5a 0.7px, transparent 1px);
+  background-size: 4.5px 4.5px;
+}
+
+.cover-top {
+  z-index: 20;
+  top: 6mm;
+  right: 6mm;
+  left: 6mm;
+}
+
+.cover-chef-wrap {
+  width: 19mm;
+  height: 19mm;
+}
+
+.cover-social {
+  z-index: 20;
+}
+
+.cover-globe {
+  z-index: 12;
+  top: 31mm;
+  left: 7mm;
+  width: 10mm;
+  height: 10mm;
+}
+
+.cover-subtitle {
+  z-index: 20;
+  top: 28mm;
+  right: 12mm;
+  left: 12mm;
+  color: #304879;
+  font-size: 11pt;
+  letter-spacing: 0.1px;
+}
+
+.cover-title {
+  z-index: 20;
+  top: 42mm;
+  right: 7mm;
+  left: 7mm;
+  color: #bd3935;
+  font-size: 24pt;
+  line-height: 1.12;
+}
+
+.cover-script {
+  z-index: 20;
+  top: 63mm;
+  font-size: 27pt;
+}
+
+.cover-hand {
+  z-index: 12;
+  top: 39mm;
+  left: 6mm;
+  width: 11mm;
+  height: 13mm;
+}
+
+.cover-arrow {
+  z-index: 12;
+  top: 99mm;
+  left: 9mm;
+  width: 17mm;
+  height: 20mm;
+}
+
+.cover-image-wrap {
+  z-index: 6;
+  top: 79mm;
+  width: 86mm;
+  height: 86mm;
+  border: 4mm solid #71864f;
+}
+
+.cover-image {
+  object-position: center;
+}
+
+.brand-pill {
+  z-index: 20;
+  bottom: 42mm;
+  padding: 2mm 9mm;
+  font-size: 11pt;
+}
+
+.cover-website,
+.cover-social {
+  display: none;
+}
+
+.cover-footer {
+  z-index: 20;
+  padding: 2.5mm 0;
+  background: #55575a;
+}
+
+/* The image must fill the complete step frame, without a circular flex-height dependency. */
+.step-images-frame {
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.step-images-grid {
+  min-height: 0;
+  flex: 1 1 auto;
+  align-items: stretch;
+}
+
+.step-image-box {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.step-image-box img,
+.step-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.step-image-placeholder {
+  flex: 1 1 auto;
+}
+
+@media print {
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
