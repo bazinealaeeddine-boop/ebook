@@ -1,0 +1,241 @@
+/* Premium visual layer: editorial cover, useful recipe metadata, and print-safe polish. */
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("DancingScript-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+
+:root {
+  --premium-olive: #738750;
+  --premium-blue: #2f4d8d;
+  --premium-red: #bd3935;
+  --premium-ink: #20252a;
+  --premium-paper: #fbfaf7;
+  --premium-line: rgba(47, 77, 141, 0.18);
+}
+
+/* Cover: calm hierarchy, intentional whitespace, and a restrained editorial frame. */
+.cover {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 84% 19%, rgba(115, 135, 80, 0.13), transparent 18%),
+    linear-gradient(145deg, #fbfcfa 0%, #f6f5ef 100%);
+}
+
+.cover::after {
+  position: absolute;
+  z-index: 3;
+  top: 8mm;
+  right: 8mm;
+  bottom: 15mm;
+  left: 8mm;
+  border: 0.35mm solid rgba(47, 77, 141, 0.18);
+  border-radius: 1mm;
+  content: "";
+  pointer-events: none;
+}
+
+.cover-title,
+.cover-subtitle,
+.cover-script {
+  z-index: 20;
+}
+
+.cover-subtitle {
+  top: 28mm;
+  color: var(--premium-blue);
+  letter-spacing: 0.2px;
+}
+
+.cover-title {
+  top: 42mm;
+  right: 10mm;
+  left: 10mm;
+  color: var(--premium-red);
+  font-size: 24pt;
+  line-height: 1.12;
+  text-shadow: 0 0.3mm 0 rgba(189, 57, 53, 0.08);
+}
+
+.cover-script {
+  top: 63mm;
+  color: var(--premium-ink);
+  font-size: 27pt;
+}
+
+.cover-branch {
+  z-index: 1;
+  background: transparent;
+  opacity: 0.62;
+}
+
+.cover-branch::before,
+.cover-branch::after {
+  background: var(--premium-olive);
+  box-shadow: none;
+}
+
+.cover-dots {
+  z-index: 2;
+  opacity: 0.22;
+  background-image: radial-gradient(var(--premium-olive) 0.8px, transparent 1.2px);
+  background-size: 4.8px 4.8px;
+}
+
+.cover-image-wrap {
+  z-index: 6;
+  border-color: var(--premium-olive);
+  box-shadow: 0 4mm 8mm rgba(35, 42, 31, 0.16), 0 0 0 1mm rgba(255, 255, 255, 0.7);
+}
+
+.cover-image {
+  object-position: center;
+}
+
+.cover-hand,
+.cover-arrow,
+.cover-globe {
+  z-index: 12;
+}
+
+.brand-pill {
+  z-index: 25;
+  bottom: 42mm;
+  padding: 2mm 10mm;
+  border: 0.25mm solid rgba(47, 77, 141, 0.12);
+  font-size: 11pt;
+}
+
+.cover-footer {
+  z-index: 25;
+  background: #4e5155;
+  letter-spacing: 0.15px;
+}
+
+/* Injected cover metadata strip. It adds value without competing with the hero image. */
+.cover-quality-strip {
+  position: absolute;
+  z-index: 24;
+  right: 12mm;
+  bottom: 52mm;
+  left: 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4mm;
+  color: #58606b;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.cover-quality-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2mm;
+  white-space: nowrap;
+}
+
+.cover-quality-strip span + span::before {
+  width: 1mm;
+  height: 1mm;
+  margin-right: 2mm;
+  border-radius: 50%;
+  background: var(--premium-olive);
+  content: "";
+}
+
+/* Internal pages get a consistent editorial rhythm. */
+.page-header {
+  background: linear-gradient(90deg, #c4dced 0%, #d9e9f2 100%);
+}
+
+.page-header-title {
+  letter-spacing: 0.55px;
+}
+
+.page-border {
+  border-color: rgba(32, 37, 42, 0.78);
+  background: linear-gradient(135deg, #ffffff 0%, var(--premium-paper) 100%);
+}
+
+.section-title,
+.step-title,
+.summary-heading,
+.summary-note-title {
+  color: var(--premium-blue);
+}
+
+.intro-text,
+.body-text,
+.step-desc,
+.ingredient-role,
+.faq-a {
+  color: #30363b;
+}
+
+.step-images-frame {
+  border: 0.25mm solid rgba(115, 135, 80, 0.16);
+  background: #f2efe7;
+}
+
+.step-image-box {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.step-image-box img,
+.step-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.step-number-circle {
+  width: 13mm;
+  height: 13mm;
+  color: var(--premium-blue);
+}
+
+.page-footer {
+  background: #30343a;
+}
+
+@media print {
+  .cover::after {
+    border-color: rgba(47, 77, 141, 0.22);
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
